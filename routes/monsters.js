@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const invokeClient= require('./client');
-// const sample = require('../public/sample.json'); //off line
 
 // GET Monsters Page, fill list from server */
 router.get('/list', async function(req, res, next) {
-  // const cursor = sample; //off line 
   const cursor = await getList();
   res.render('monsters',{ list: cursor }); 
 });
@@ -13,8 +11,7 @@ router.get('/list', async function(req, res, next) {
 /* GET Individual entry. */
 router.get('/entry', async function(req, res, next) {
   let id = req.query.valor;
-  const list = sample; //off line 
-  // const list = await getList();
+  const list = await getList();
   let document;
   for (doc of list) {
     if (doc._id == id) {
