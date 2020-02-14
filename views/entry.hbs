@@ -1,0 +1,66 @@
+<div class="template" id="entry" name="entry">
+{{!-- template begins --}}
+  <div class="row">
+    <div class="rightcolumn" id="right">
+      <div class="flex-list">
+        <div><span id="rhd">Racial Hit Dice:</span><span style="float:right"> {{entry.rhd}} </span></div >
+        <div><span id="la">Level Adjustment:</span></span> <span style="float:right">  {{entry.la}} </span></div >
+        <div><span id="ecl">Starting ECL:</span><span style="float:right">  {{entry.ecl}} </span></div>
+      </div>   
+      <div class="content">
+        <h2 id="monster-entry"> {{entry.monster_name}} </h2><hr>
+
+        <div class="row-features">
+          <div class="pros">
+              <b>Pros</b>
+              <ul id="pros"> 
+                {{#each entry.pros}}
+                  <li> {{this}} </li>   
+                {{/each}}
+              </ul>
+          </div>
+          <div class="cons">
+              <b>Cons</b>
+              <ul id="cons">
+                {{#each entry.cons}}
+                  <li> {{this}} </li>   
+                {{/each}}
+              </ul>
+          </div>
+          <div class="suggested">
+              <table id="suggested">
+                {{#each entry.suggested }}
+                  <tr>
+                    <th>{{@key}}</th>
+                    <td>{{this}}</td>
+                  </tr>
+                {{/each}}
+              </table> 
+          </div>
+        </div>
+
+        {{!-- <p class="a"> --}}
+          {{{entry.paragraph}}}
+        {{!-- </p> --}}
+
+        <div class="column-builds">
+         {{#each entry.builds }} 
+          <div class="build">
+            <h3> {{@key}} </h3>
+            <table class="table-build">
+             {{#each this }} 
+              <tr>
+                <th> {{@key}} </th>
+                <td> {{this}} </td>
+              </tr>
+             {{/each}}  
+            </table>
+          </div>
+         {{/each}} 
+        </div>
+
+      </div>   
+    </div>
+  </div>
+{{!-- template ends   --}}
+</div>

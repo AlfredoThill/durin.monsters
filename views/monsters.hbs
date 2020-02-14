@@ -1,0 +1,26 @@
+<div class="template" id="monsters" name="monsters-list">
+{{!-- template begins --}}
+  {{!-- Middle Sections --}}
+  <div class="row">
+    <div class="leftcolumn" id="left">
+      <div class="sticky">
+        <h4>Search by Name</h4>
+        <input type="text" class="filter" id="filter-input" onkeyup="filter('filter-input')" placeholder="Search..">
+      </div> 
+    </div>
+    <div class="rightcolumn" id="right">
+      <h2>Bestiary</h2>
+      <p class="a">
+        Here you will find a list of monsters, each entry contains tips, notes and observations on the monster's race. Also, there will be some sample builds, on a 30 point buy system, please feel free to include them as NPCs in your adventure or play them your self!
+      </p> 
+      <hr>
+      <div class="flex-list">
+        {{#each list}}
+         <a href="/monsters/entry?valor={{_id}}" class="item" name={{monster_name}} id={{_id}} > {{monster_name}} </a> 
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{!-- template ends --}}
+</div>
+  <script src="/javascripts/monsters.js" defer></script>

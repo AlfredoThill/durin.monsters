@@ -1,0 +1,152 @@
+/* ----------------------- General ----------------------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+.header h1 {
+  font-size: 50px;
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+p {
+  text-align: justify;
+}
+p.b {
+  font-style: italic;
+}
+/* ----------------------- Nav Bar ----------------------- */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  padding: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  min-height: 60px;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav .active-nav {
+  background-color:black;
+  color: rgb(141, 12, 12);
+}
+/* Mobile */
+.topnav-mobile {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  display: none;
+  width: 100%;
+}
+.topnav-mobile .submenu {
+  display: none;
+}
+.topnav-mobile a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-block;
+}
+.topnav-mobile .submenu a {
+  display: block;
+}
+.topnav-mobile a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav-mobile a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* ----------------------- Main Container ----------------------- */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+/* 1.----------------------- Left Container ----------------------- */
+  .leftcolumn {   
+    flex-basis: 20%;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    min-width: 200px;
+  }
+    .leftcolumn .sticky {  
+      position: sticky;
+      top: 80px;
+    }
+    .leftcolumn a {  
+      display: block; 
+      color: black;
+      width: 100%;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .leftcolumn a:hover {
+      background-color: grey;
+      color: white;
+    }
+/* 2.----------------------- Rigth Container ----------------------- */
+  .rightcolumn {
+    background-color: white;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+  }
+  .rightcolumn .content {
+    display: inline-block;
+    width: 100%;
+  }
+  .rightcolumn .button-container {
+    text-align: center;
+  }
+ 
+/* ----------------------- Responsiveness  ----------------------- */
+/* When the screen is less than 600px wide, do stuff */
+@media screen and (max-width: 600px) {
+  .row {   
+    flex-direction: column;
+  }
+  .leftcolumn, .topnav, .header, .footer {
+    display: none;
+  }
+  .topnav-mobile {
+    display: inline-block;
+  }
+}
+/* When the screen is less than 500px high, do stuff */
+@media screen and (max-height: 500px) {
+  .leftcolumn, .topnav, .header, .footer {
+    display: none;
+  }
+  .topnav-mobile {
+    display: inline-block;
+  }
+}

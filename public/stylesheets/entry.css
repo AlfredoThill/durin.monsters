@@ -1,0 +1,65 @@
+/* Add specific for entry template */
+    /* Features container */
+        .row-features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .row-features > div {
+            border-radius: 20px;
+            flex: 1 1 30%;
+            padding: 2%;
+            margin: 5px;
+            max-width: 400px;
+            min-width: 200px;
+        }
+        .pros {
+            border: 2px solid #73AD21;
+            color: #73AD21;
+        }  
+        .cons {
+            border: 2px solid rgb(211, 75, 12);
+            color: rgb(211, 75, 12);
+        }
+        .suggested {
+            border: 2px solid rgb(73, 68, 66);
+            color: rgb(73, 68, 66);
+            box-sizing: content-box;
+        }
+        #suggested td, #suggested th {
+            padding: 4px;
+        } 
+    /* Sample Build */
+        .column-builds {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .column-builds .build {
+            border-radius: 10px;
+            border: 2px solid rgb(73, 68, 66);
+            color: rgb(73, 68, 66);
+            flex: 1;
+            padding: 2%;
+            margin: 2px;
+            font-size: calc(10px + 6 * ((100vw - 300px)/ 900));
+        }
+        .table-build {
+            border-collapse: collapse;
+        }
+        .table-build th, .table-build td {
+            text-align: left;
+            padding: 2px;
+            
+        }
+        .table-build tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        /* When screen is bigger than 1200px width limit font, to prevent table overgrowth */
+        @media screen and (min-width: 1200px) {
+            .column-builds .build {
+            font-size: 16px;
+            }
+        }
+  
+     
