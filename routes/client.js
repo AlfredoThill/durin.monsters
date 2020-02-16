@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 let client = async function() {
    try { 
     let uri = 'mongodb+srv://monster_user:1234@cluster0-luguo.gcp.mongodb.net/monsterPage?ssl=true&authSource=admin&w=majority';
-    const client = new MongoClient(uri, { useNewUrlParser: true });
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     await client.connect();
     return client
    }
