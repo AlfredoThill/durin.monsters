@@ -29,6 +29,8 @@ if (current_template == 'home' || current_template == 'monsters-list') {
 }
 else {
   document.getElementById('GoTo').style.display = 'none';
+  document.getElementById(current_template).setAttribute('class','active-nav');
+  document.getElementById('GoTo').style.display = 'inline-block';
 }
 
 // Mobile Nav bar Menu
