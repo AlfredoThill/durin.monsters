@@ -4,14 +4,14 @@ const invokeClient= require('./client');
 
 // GET Monsters Page, fill list from server */
 router.get('/list', async function(req, res, next) {
-  const cursor = await getList();
+  const cursor = await getList('list');
   res.render('monsters',{ list: cursor }); 
 });
 
 /* GET Individual entry. */
 router.get('/entry', async function(req, res, next) {
   let id = req.query.valor;
-  const list = await getList();
+  const list = await getList('list');
   let document;
   for (doc of list) {
     if (doc._id == id) {
@@ -25,11 +25,13 @@ router.get('/entry', async function(req, res, next) {
 module.exports = router;
 
 // Cache 'monsters' collection 
-let cache = {};
+let cache = { 'date': 0 };
 async function getList(input) {
     let cursor = null
+    let one_day = 1000*60*60*24;
+    let stored_by = cache['date'] - new Date;
     // check if the input has been calaculated already and stored in cache
-    if(cache[input]) {
+    if(cache[input] && stored_by < one_day) {
       console.log('Brought from cache')
       return cache[input] // return the result in the cache
     }
@@ -38,6 +40,7 @@ async function getList(input) {
       cursor = await queryAtlas();
       console.log('Brought from Atlas')
       cache[input] = cursor; // store the result with the input as key
+      cache['date'] = new Date; // store the result with the input as key
     }
     return cursor
 }

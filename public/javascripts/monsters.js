@@ -1,8 +1,9 @@
 // Adjust flexbox "list" for last entries wierd sizes
 adjust(); // Initial fix
+sort('name'); // Initial sort by name
 window.addEventListener('resize', adjust) //Listening for further changes
 
-// Filter & Order
+// Filter
 function filter(filter_id) {
   let input, value, criteria, items, i, txtValue;
   input = document.getElementById(filter_id);
@@ -19,6 +20,19 @@ function filter(filter_id) {
       } else {
         items[i].style.display = "none";
       }
+  }
+}
+// Sorts
+function sort(criteria) {
+  const items = document.querySelectorAll('.flex-list > .item');
+  const names = [];
+  for (let i = 0; i < items.length; i++) {
+    names.push(items[i].getAttribute(criteria));
+  }
+  names.sort();
+  for (let j = 0; j < names.length; j++) {
+    let name = names[j];
+    document.getElementsByName(name)[0].style.order = j + 1
   }
 }
 // Adjust Function
