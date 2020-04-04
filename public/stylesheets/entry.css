@@ -1,4 +1,14 @@
 /* Add specific for entry template */
+        #entry-head div {
+            flex: 1 0 auto;
+            box-sizing: border-box;
+            background: #e0ddd5;
+            color: #171e42;
+            padding: 10px;
+            margin: 5px 5px;
+            font-style: oblique;
+            font-weight: bold;
+        }
     /* Features container */
         .row-features {
             display: flex;
@@ -32,7 +42,6 @@
     /* Sample Build */
         .column-builds {
             display: flex;
-            flex-wrap: wrap;
             flex-direction: column;
         }
         .column-builds .build {
@@ -49,8 +58,10 @@
         }
         .table-build th, .table-build td {
             text-align: left;
-            padding: 2px;
-            
+            padding: 2px; 
+        }
+        .table-build td {
+            word-break: break-word; 
         }
         .table-build tr:nth-child(odd) {
             background-color: #f2f2f2;
@@ -61,5 +72,187 @@
             font-size: 16px;
             }
         }
-  
-     
+    /* Discussion */
+        #discussion {
+            background-color: rgb(73, 68, 66);
+            color: whitesmoke;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #comments > hr {
+            color: white;
+            margin: 0px -10px 0px -10px;
+        }
+        .reply > hr {
+            color: grey;
+            width: 90%;
+        }
+        .comment {
+            padding: 5px; 
+        }
+        .row[name=comment-head] {
+            align-items: center;
+        }
+        .column[name=comment-titles], .row[name=comment-titles] {
+            position: relative;
+            flex: 1 1 90%;
+            flex-wrap: wrap;
+            margin: auto 0px;
+        }
+        .comment-title {
+            padding: 5px 5px;
+            margin: auto 0px;
+        }
+        .edit-n-erase {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            height: 30px;
+            width: 60px;
+        }
+        .edit-n-erase > img {
+            float: left;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid rgb(73, 68, 66);
+            cursor: pointer;
+        }
+        .comment-title[name=subject], .comment-title[name=re-subject] {
+            align-self: center;
+            word-break: break-all;
+            font-family: Aniron;
+        }
+        /* Vote */
+            .column[name=vote] {
+                flex-basis: 10%;
+                border: 1px black;
+                border: 2px solid rgb(73, 68, 66);
+                align-items: center;
+            }
+            .arrow-up {
+                width: 0; 
+                height: 0; 
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid black;
+                margin-bottom: 5px;
+            }
+            .arrow-down {
+                width: 0; 
+                height: 0; 
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid black;
+                margin-top: 5px;
+            }
+            .arrow-up:hover, .arrow-down:hover {
+                cursor: pointer;
+            }
+        /* Vote End */      
+        .comment-content {
+            padding: 4px;
+            font-size: 12px;
+            border: 1px black;
+        }
+        /* Replies */
+        .reply-button {
+           align-self: flex-end;
+        }
+        .reply {
+            flex: 1;
+            align-self: flex-end;
+            width: 90%;
+        }
+        /* New Coment */
+        #new-comment {
+            text-align: center;
+            font-family: Aniron;
+        }
+        #new-comment:hover {
+            cursor: pointer;
+        }
+        /* Form specifics */
+        #cancel-form {
+            width: 20%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            margin: 8px 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: center;
+        }
+        #cancel-form:hover {
+            background-color: #45a049;
+        }
+            /* Close Button */
+            .close-button {
+                width: 32px;
+                height: 32px;
+                align-self: flex-end;
+                text-align: center;
+                padding: 2px;
+                font-size: 28px;
+                cursor: pointer;
+            }
+            .close-button:hover {
+                opacity: 1;
+            }
+            .close-button::before {
+                content: '\00d7'; 
+                color: #fff;
+            }
+        /* Tooltip for buttons */  
+        .tooltip4b {
+            /* position: relative; */
+            display: inline-block;
+            /* border-bottom: 1px dotted black; */
+          }
+          
+          .tooltip4b .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            margin-left: -60px;
+          }
+          
+          .tooltip4b .tooltiptext.l {
+            bottom: 120%;
+            left: 20%;
+          }
+          .tooltip4b .tooltiptext.r {
+            top: 120%;
+            left: 80%;
+          }
+          
+          .tooltip4b .tooltiptext::after {
+            content: "";
+            position: absolute;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+          }
+          
+          .tooltip4b .tooltiptext.l::after {
+            top: 100%;
+            left: 50%;
+            border-color: black transparent transparent transparent;
+          }
+          .tooltip4b .tooltiptext.r::after {
+            bottom: 100%;
+            left: 50%;
+            border-color: transparent transparent black transparent;
+          }
+          
+          .tooltip4b:hover .tooltiptext {
+            visibility: visible;
+          }

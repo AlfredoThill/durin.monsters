@@ -16,17 +16,15 @@
       <hr>
       <div class="flex-list">
         {{#each list}}
-         <a href="/monsters/entry?valor={{_id}}" class="item" name={{monster_name}} id={{_id}} > {{monster_name}} </a> 
+         <a href="/monsters/entry?valor={{_id}}" class="item" name={{monster_name}} id={{_id}} > {{monster_name}} 
+          <div class="tooltip">
+            {{desc}}<hr>
+            Starting ECL:  {{ecl}}<br>
+            Racial HDs: {{rhd}}<br>
+            L.A.: {{la}}
+          </div>
+         </a> 
         {{/each}}
-         <a class="item" name='Monster 1'> Monster 1 </a>
-         <a class="item" name='Monster 2'> Monster 2 </a>
-         <a class="item" name='Monster 3'> Monster 3 </a>
-         <a class="item" name='Monster 4'> Monster 4 </a>
-         <a class="item" name='Monster 5'> Monster 5 </a>
-         <a class="item" name='Monster 6'> Monster 6 </a>
-         <a class="item" name='Monster 7'> Monster 7 </a>
-         <a class="item" name='Monster 8'> Monster 8 </a>
-         <a class="item" name='Monster 9'> Monster 9 </a>
       </div>
     </div>
   </div>

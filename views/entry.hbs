@@ -1,14 +1,14 @@
 <div class="template" id="entry" name="entry">
 {{!-- template begins --}}
-  <div class="row">
+  <div class="column">
     <div class="rightcolumn" id="right">
-      <div class="flex-list">
+      <div class="flex-list" id='entry-head'>
         <div><span id="rhd">Racial Hit Dice:</span><span style="float:right"> {{entry.rhd}} </span></div >
         <div><span id="la">Level Adjustment:</span></span> <span style="float:right">  {{entry.la}} </span></div >
         <div><span id="ecl">Starting ECL:</span><span style="float:right">  {{entry.ecl}} </span></div>
       </div>   
       <div class="content">
-        <h2 id="monster-entry"> {{entry.monster_name}} </h2><hr>
+        <h2 id="monster-entry" innerId={{entry._id}}> {{entry.monster_name}} </h2><hr>
 
         <div class="row-features">
           <div class="pros">
@@ -39,14 +39,12 @@
           </div>
         </div>
 
-        {{!-- <p class="a"> --}}
           {{{entry.paragraph}}}
-        {{!-- </p> --}}
 
         <div class="column-builds">
          {{#each entry.builds }} 
           <div class="build">
-            <h3> {{@key}} </h3>
+            <h3> {{@key}} </h3> 
             <table class="table-build">
              {{#each this }} 
               <tr>
@@ -55,12 +53,41 @@
               </tr>
              {{/each}}  
             </table>
+            <button style="float: right">Export PDF</button>
           </div>
          {{/each}} 
         </div>
 
       </div>   
     </div>
+    <div class="rightcolumn" id="discussion-body">
+      <h2 style="background-color: rgb(73, 68, 66); padding: 10px;border-radius: 10px; color: white">Discussion</h2>
+      <div class="column" id='discussion'>
+        <div id='comments'></div> {{!-- Pushed with Ajax --}}
+        <div class='new-comment'>
+         <h3 id='new-comment'>Leave a Comment!</h3> 
+          <form class='column' id='comment-form' style='display: none'>
+            <span class='close-button'></span>
+            <label for="comment-subject">Subject</label>
+            <input type="text" id="comment-subject" name="comment-subject" maxlength='128' size="128" required>
+            <label for="comment-content">Your comment:</label>
+            <textarea rows="4" cols="50" id="comment-content" name="comment-content" form="comment-form" maxlength='1024' required>Enter text here...</textarea>
+            <input type="submit" value="Submit" id='submit-comment'>
+          </form>
+          <form class='column' id='edit-comment' innerID='' style='display: none'>
+            <span class='close-button'></span>
+            <label for="edit-comment-subject">Edit Subject</label>
+            <input type="text" id="edit-comment-subject" name="edit-comment-subject" maxlength='128' size="128" required>
+            <label for="edit-comment-content">Edit your comment:</label>
+            <textarea rows="4" cols="50" id="edit-comment-content" name="edit-comment-content" form="edit-comment" maxlength='1024' required></textarea>
+            <input type="submit" value="Submit" id='edit-submit-comment'>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 {{!-- template ends   --}}
 </div>
+{{!-- Order of scripts matters! --}}
+<script src="/javascripts/helpers/entry-helper.js" defer></script>
+<script src="/javascripts/entry.js" defer></script>

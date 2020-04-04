@@ -45,7 +45,7 @@ function adjust() {
   let items = iterator.length;
   let rows = (items/Math.floor(cols));
   let ratio = rows % 1;
-  if (ratio < 0.8 && ratio > 0) {
+  if (ratio < 0.7 && ratio > 0) {
     const placed = Math.floor(cols)*Math.floor(rows);
     for (let i = items - 1; i >= placed; i--) {
       iterator[i].style.maxWidth = iterator[0].offsetWidth + "px";

@@ -1,0 +1,73 @@
+    {{#each forum.comments }}
+        <div class="column" name="comment" innerID={{_id}} userID={{user_id}}>
+         <div class='row' name='comment-head'>
+          <div class='column' name='vote'>
+              <div class="arrow-up"></div>
+              <div class="count">{{likes}}</div>
+              <div class="arrow-down"></div>  
+          </div>
+          <div class='column' name='comment-titles'>
+           <div class="edit-n-erase tooltip4b" tier="comment" style='display: none'>
+             <img src="../images/edit.png" name='edit'>
+             <img src="../images/erase.png" name='erase'>
+              <span class="tooltiptext l">Edit</span>
+              <span class="tooltiptext r">Delete</span>
+           </div> 
+            <div class='comment-title'>By: <i>{{user_name}}</i></div>
+            <div class='comment-title'>Edited: <i>{{created}}</i></div>
+            <div class='comment-title' name='subject'><b>{{subject}}</b></div>
+          </div>
+         </div>  
+          <hr>
+         <div class="column comment-content">
+              <p>{{paragraph}}</p>
+              <div class='column' name='replies' style='display: none;'>
+                {{#replies }} 
+                <div class='reply' innerID={{_id}} userID={{user_id}}>
+                 <hr>
+                 <div class='row' name='comment-head'>
+                  <div class='column' name='vote'>
+                      <div class="arrow-up"></div>
+                      <div class="count">{{likes}}</div>
+                      <div class="arrow-down"></div>  
+                  </div>
+                  <div class='row' name='comment-titles'>    
+                   <div class="edit-n-erase tooltip4b" tier='reply' style='display: none'>
+                    <img src="../images/edit.png" name='edit'>
+                    <img src="../images/erase.png" name='erase'>
+                      <span class="tooltiptext l">Edit</span>
+                      <span class="tooltiptext r">Delete</span>
+                  </div>
+                    <div class='comment-title'>By: <i>{{user_name}}</i></div>
+                    <div class='comment-title'>Edited: <i>{{last_edited}}</i></div>
+                  </div>
+                 </div>  
+                 <div class="comment-content">
+                  <p>{{paragraph}}</p>
+                 </div> 
+                </div> 
+                {{/replies}} 
+              </div>
+              <div class='reply' name='reply-container'>  
+                  <form class='column' name='reply-form' id='reply-form${{_id}}' style='display: none'>
+                    <hr> 
+                      <label for="reply-content">Your reply:</label>
+                      <textarea rows="4" cols="50" name="reply-content" name="reply-content" form="reply-form${{_id}}" maxlength='512' required>Enter text here...</textarea>
+                      <input type="submit" value="Submit">
+                  </form>
+                  <form class='column' name='edit-reply' id='edit-reply${{_id}}' style='display: none'>
+                    <hr> 
+                      <span class='close-button'></span>
+                      <label for="edit-reply-content">Edit your reply:</label>
+                      <textarea rows="4" cols="50" name="edit-reply-content" name="edit-reply-content" form="edit-reply${{_id}}" maxlength='512' required></textarea>
+                      <input type="submit" value="Submit">
+                  </form>
+              </div>
+          </div>
+          <div class='row reply-button'>
+            <button name='show-replies' style='display: none;'>Show Replies</button>
+            <button name='reply-button'>Reply</button>
+          </div>
+        </div>
+        <hr>
+    {{/each}} 
