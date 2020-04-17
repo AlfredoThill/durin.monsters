@@ -254,27 +254,27 @@ input[type=submit]:hover {
 
 /* ----------------------- Responsiveness  ----------------------- PENDING */
 /* When the screen is less than 600px wide, do stuff */
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .leftcolumn, .topnav, .header, .footer {
     display: none;
   }
   .topnav-mobile {
     display: inline-block;
   }
-} */
+}
 /* When the screen is less than 500px high, do stuff */
-/*@media screen and (max-height: 500px) {
+@media screen and (max-height: 500px) {
   .leftcolumn, .topnav, .header, .footer {
     display: none;
   }
   .topnav-mobile {
     display: inline-block;
   }
-} */
+}
 /* Misc Font for header */
-/*@font-face {
+@font-face {
   font-family: 'Aniron';
   src: url('../anirm___.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+}
