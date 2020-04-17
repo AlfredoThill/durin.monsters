@@ -71,6 +71,7 @@ function mobileMenu(id) {
   document.getElementById('modal-msg').style.display = 'none';
   document.getElementById('modal-error').style.display = 'none';
   document.getElementById('modal-delete-warning').style.display = 'none';
+  document.querySelector('#login-template > .column[name="await-msg"]').style.display = 'none';
  }
  // Swicth login - sign in - reset pwd
 if (document.getElementById("login-template")) {

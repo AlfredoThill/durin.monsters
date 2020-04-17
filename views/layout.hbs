@@ -18,7 +18,7 @@
     <div class="topnav">
       <a href="/" id='home'>Home</a>
       <a href="/monsters/list"  id='monsters-list'>Monsters</a>
-      <a href="/forum"  id='forum'>Discussion</a>
+      {{!-- <a href="/forum"  id='forum'>Discussion</a> --}}
       <a href="/about" id='about'>About</a>
       <span id='show-modal' style="float:right">Login</span>
     </div>
@@ -80,7 +80,14 @@
             <input type="submit" value="Submit" id='reset-submit'>
           </form>
           <div class='modal-message'>You 'll recive a mail with instructions.</div>
-        </div>      
+        </div>
+        <div class='column' name='await-msg' style='display: none'>
+            <h2 id='modal-title'><span name='msg-title'></span></h2>
+            <div class='column'>
+                <hr style='margin: 0px -10px 0px -10px;'>
+                <p><span name='msg-content'></span></p>
+            </div>
+          </div>      
       </div>
       {{!-- Modal logged and msg --}}
       <div class="modal-content" id='logged-template' style='display: none'>

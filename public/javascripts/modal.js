@@ -66,7 +66,12 @@ function loginThen(form,resp) {
 function singInThen(form,resp) {
   const results = JSON.parse(resp);
   if (results.success == true) { // sign in attemp succesful
-      handleMsg(results);
+      // handleMsg(results);
+      document.getElementById('signin-content').style.display = 'none';
+      const modalMSG = document.querySelector('#login-template > .column[name="await-msg"]');
+      modalMSG.style.display = null;
+      modalMSG.querySelector('span[name="msg-title"]').innerHTML = results.title;
+      modalMSG.querySelector('span[name="msg-content"]').innerHTML = results.msg;
   }
   else if (results.success == false) {
       form.reset();
