@@ -54,6 +54,11 @@ function mobileMenu(id) {
  document.getElementById('show-modal').addEventListener('click', () => {
   document.getElementById("myModal").style.display = 'block';
  })
+ // Show modal
+ document.getElementById('mobile-login').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById("myModal").style.display = 'block';
+ })
  // Hide modal
  document.querySelectorAll('.close[name=close-modal').forEach( (element) => {
   element.addEventListener('click', hideModal );

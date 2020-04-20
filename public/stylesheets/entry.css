@@ -79,11 +79,11 @@
             border-radius: 10px;
             padding: 10px;
         }
-        #comments > hr {
+        hr[name=divider] {
             color: white;
             margin: 0px -10px 0px -10px;
         }
-        .reply > hr {
+        hr[name=divider2] {
             color: grey;
             width: 90%;
         }
@@ -256,3 +256,23 @@
           .tooltip4b:hover .tooltiptext {
             visibility: visible;
           }
+        /* A little responsivness */
+        @media screen and (max-width: 400px) {
+            .comment-title {
+             font-size: 10px;
+            }
+            .edit-n-erase {
+                position: absolute;
+                top: 6px;
+                right: 12px;
+                height: 20px;
+                width: 40px;
+            }
+            #new-comment {
+             font-size: 12px;   
+            }
+            button[name='show-replies'], button[name='reply-button'], button[name='pdf'] {
+             font-size: 10px;    
+            }
+        }
+        

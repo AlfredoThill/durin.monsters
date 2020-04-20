@@ -120,7 +120,8 @@ function pushError(e) {
 }
 // Populate dashboard
 function handleDashboard(obj) {
-    document.getElementById('show-modal').innerHTML = 'Account'
+    document.getElementById('show-modal').innerHTML = 'Account';
+    document.getElementById('mobile-login').innerHTML = 'Account';
     document.getElementsByName('modal-user-name').forEach( (element) => {
       element.innerHTML = obj.name;
     })

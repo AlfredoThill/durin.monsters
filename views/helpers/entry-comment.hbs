@@ -18,13 +18,13 @@
             <div class='comment-title' name='subject'><b>{{subject}}</b></div>
           </div>
          </div>  
-          <hr>
+          <hr name="divider2">
          <div class="column comment-content">
               <p>{{paragraph}}</p>
               <div class='column' name='replies' style='display: none;'>
                 {{#replies }} 
                 <div class='reply' innerID={{_id}} userID={{user_id}}>
-                 <hr>
+                 <hr name="divider2">
                  <div class='row' name='comment-head'>
                   <div class='column' name='vote'>
                       <div class="arrow-up"></div>
@@ -69,5 +69,5 @@
             <button name='reply-button'>Reply</button>
           </div>
         </div>
-        <hr>
+        <hr name="divider">
     {{/each}} 
